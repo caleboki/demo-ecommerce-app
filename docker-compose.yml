@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  frontend:
+    image: ecommerce-node-env
+    working_dir: /usr/src/app/ecommerce-frontend
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3001:3001"
+    command: npm run dev
+
+  backend:
+    image: ecommerce-node-env
+    working_dir: /usr/src/app/ecommerce-backend
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    command: npm start
