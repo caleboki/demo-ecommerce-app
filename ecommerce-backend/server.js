@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const PORT = 3000;
 
@@ -8,6 +9,7 @@ let productId = 1; // Simple counter for product ID
 let orders = []; // In-memory storage for orders
 let orderId = 1; // Simple counter for order ID
 
+app.use(cors());
 app.use(express.json()); // Middleware to parse JSON request bodies
 
 // Products API
